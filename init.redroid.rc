@@ -1,0 +1,42 @@
+on early-init
+    mount none /system/etc /etc bind rec  # docker fix
+    mount sysfs sysfs /sys rw remount  # ueventd fix
+
+    write /data/.empty 0
+    mount none /data/.empty /proc/vmallocinfo bind # lxcfs?
+
+    symlink /system/bin /bin
+
+    # Mount binderfs
+    mkdir /dev/binderfs
+    mount binder binder /dev/binderfs stats=global
+    chmod 0755 /dev/binderfs
+
+    symlink /dev/binderfs/binder /dev/binder
+    symlink /dev/binderfs/hwbinder /dev/hwbinder
+    symlink /dev/binderfs/vndbinder /dev/vndbinder
+
+    chmod 0666 /dev/binderfs/hwbinder
+    chmod 0666 /dev/binderfs/binder
+    chmod 0666 /dev/binderfs/vndbinder
+
+    # fix for WSL2
+    mkdir /dev/input
+
+    setprop gralloc.gbm.device /dev/dri/renderD128
+
+on init
+    # use updated swiftshader, disable gpu pixel buffer first
+    # reenable if use mesa
+    setprop debug.hwui.use_gpu_pixel_buffers false
+
+on post-fs-data
+    # fix for static IP, must after post-fs-data and before netd
+    exec - system system -- /vendor/bin/ipconfigstore v2
+
+    # no need to mount, and encryption not supported yet
+    trigger nonencrypted
+
+on boot && property:qemu.gles.vendor=mesa
+    setprop debug.hwui.use_gpu_pixel_buffers true
+
