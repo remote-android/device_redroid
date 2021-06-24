@@ -11,8 +11,7 @@ BUILD_EMULATOR_OPENGL := false
 # use seperate vendor partition
 TARGET_COPY_OUT_VENDOR := vendor
 
-# TODO add panfrost
-BOARD_GPU_DRIVERS := freedreno lima virgl radeonsi
+BOARD_GPU_DRIVERS := virgl radeonsi
 
 DEVICE_MANIFEST_FILE := device/redroid/manifest.xml
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
