@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+$(call inherit-product-if-exists, product.mk)
+
 AUDIOSERVER_MULTILIB := first
 
 # ?
@@ -26,16 +28,16 @@ PRODUCT_PACKAGES += \
     fs_config
 
 PRODUCT_PACKAGES += \
-    vncserver \
+    audio.r_submix.default \
     hwcomposer.redroid \
-	gralloc.gbm \
+    gralloc.gbm \
     gralloc.redroid \
     gatekeeper.ranchu \
     libEGL_swiftshader \
     libGLESv1_CM_swiftshader \
     libGLESv2_swiftshader \
-	libGLES_mesa \
-	ipconfigstore \
+    libGLES_mesa \
+    ipconfigstore \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.qemu=1 \
@@ -81,10 +83,12 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf \
-	frameworks/native/data/etc/android.hardware.ethernet.xml:/system/etc/permissions/android.hardware.ethernet.xml \
-    device/generic/goldfish/audio_policy.conf:system/etc/audio_policy.conf
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
+    frameworks/native/data/etc/android.hardware.ethernet.xml:/system/etc/permissions/android.hardware.ethernet.xml \
+    device/generic/goldfish/audio_policy.conf:system/etc/audio_policy.conf \
+    vendor/redroid/gpu_config.sh:$(TARGET_COPY_OUT_VENDOR)/bin/gpu_config.sh \
 
-    
+
 # Extend heap size we use for dalvik/art runtime
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 

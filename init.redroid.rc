@@ -1,9 +1,8 @@
 on early-init
+    mount debugfs debugfs /sys/kernel/debug mode=755
+
     mount none /system/etc /etc bind rec  # docker fix
     mount sysfs sysfs /sys rw remount  # ueventd fix
-
-    write /data/.empty 0
-    mount none /data/.empty /proc/vmallocinfo bind # lxcfs?
 
     symlink /system/bin /bin
 
@@ -20,15 +19,29 @@ on early-init
     chmod 0666 /dev/binderfs/binder
     chmod 0666 /dev/binderfs/vndbinder
 
-    # fix for WSL2
+    # inputflinger require this dir
     mkdir /dev/input
 
-    setprop gralloc.gbm.device /dev/dri/renderD128
+    exec - root root -- /vendor/bin/gpu_config.sh
+
+
+# setup overlay data partition
+on early-init && property:ro.kernel.redroid.overlay=1
+    mkdir /data-diff/upper
+    rmdir /data-diff/work
+    mkdir /data-diff/work
+
+    mount overlay overlay /data lowerdir=/data-base,upperdir=/data-diff/upper,workdir=/data-diff/work
+
 
 on init
+    write /data/.empty 0
+    mount none /data/.empty /proc/vmallocinfo bind # lxcfs?
+
     # use updated swiftshader, disable gpu pixel buffer first
     # reenable if use mesa
     setprop debug.hwui.use_gpu_pixel_buffers false
+
 
 on post-fs-data
     # fix for static IP, must after post-fs-data and before netd
