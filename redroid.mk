@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+$(call inherit-product-if-exists, product.mk)
+
 PRODUCT_SOONG_NAMESPACES += external/mesa3d
 
 AUDIOSERVER_MULTILIB := first
@@ -28,7 +30,6 @@ PRODUCT_HOST_PACKAGES += \
     fs_config
 
 PRODUCT_PACKAGES += \
-    vncserver \
     hwcomposer.redroid \
     gralloc.redroid \
     gralloc.gbm \
@@ -94,6 +95,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/surround_sound_configuration_5_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/surround_sound_configuration_5_0.xml \
     frameworks/native/data/etc/android.hardware.ethernet.xml:/system/etc/permissions/android.hardware.ethernet.xml \
+    vendor/redroid/gpu_config.sh:$(TARGET_COPY_OUT_VENDOR)/bin/gpu_config.sh \
 
 
 # Extend heap size we use for dalvik/art runtime
