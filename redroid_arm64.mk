@@ -21,10 +21,7 @@ $(call inherit-product, $(LOCAL_PATH)/redroid.mk)
 PRODUCT_NAME := redroid_arm64
 PRODUCT_DEVICE := redroid_arm64
 PRODUCT_BRAND := ReDroid
-PRODUCT_MODEL := ReDroid
+PRODUCT_MODEL := redroid12_arm64
 
-PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/init.redroid.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.redroid.rc \
+DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
