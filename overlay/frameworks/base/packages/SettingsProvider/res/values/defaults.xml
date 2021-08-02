@@ -22,5 +22,8 @@
 
     <bool name="def_lockscreen_disabled">true</bool>
 
+    <!-- maximize the timeout to INT_MAX about 500+ hours -->
+    <integer name="def_screen_off_timeout">2147483647</integer>
+
     <bool name="def_package_verifier_enable">false</bool>
 </resources>
