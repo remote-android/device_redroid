@@ -20,8 +20,12 @@ on early-init && property:ro.kernel.redroid.overlay=1
 
 
 on init
+    # lxcfs better
     write /data/.empty 0
-    mount none /data/.empty /proc/vmallocinfo bind # lxcfs?
+    mount none /data/.empty /proc/vmallocinfo bind
+
+    # fix suspend host system?
+    mount none /dev/null /sys/power/state bind
 
 
 on post-fs-data
