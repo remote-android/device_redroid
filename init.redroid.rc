@@ -17,6 +17,9 @@ on early-init
     chmod 0666 /dev/binderfs/binder
     chmod 0666 /dev/binderfs/vndbinder
 
+    # 32bit app require this, remove for 64bit only redroid
+    write /proc/sys/kernel/pid_max 65535
+
     # inputflinger require this dir
     mkdir /dev/input
 
