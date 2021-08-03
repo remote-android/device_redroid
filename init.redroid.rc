@@ -17,7 +17,7 @@ on early-init
     chmod 0666 /dev/binderfs/binder
     chmod 0666 /dev/binderfs/vndbinder
 
-    # fix for WSL2
+    # inputflinger require this dir
     mkdir /dev/input
 
     exec - root root -- /vendor/bin/gpu_config.sh
