@@ -37,7 +37,6 @@ PRODUCT_PACKAGES += \
     libGLESv1_CM_swiftshader \
     libGLESv2_swiftshader \
     libGLES_mesa \
-    vulkan.radv \
     vulkan.pastel \
     ipconfigstore \
 
