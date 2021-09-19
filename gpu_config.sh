@@ -59,6 +59,7 @@ gpu_setup_host() {
 
     setprop qemu.gles.vendor mesa
     setprop ro.hardware.gralloc gbm
+    setprop ro.kernel.redroid.fps 30
 }
 
 gpu_setup_guest() {

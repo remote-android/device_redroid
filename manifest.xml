@@ -18,6 +18,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.configstore</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISurfaceFlingerConfigs</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.drm</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -31,6 +40,15 @@
         </interface>
         <fqname>@1.2::ICryptoFactory/clearkey</fqname>
         <fqname>@1.2::IDrmFactory/clearkey</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.gatekeeper</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IGatekeeper</name>
+            <instance>default</instance>
+        </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.allocator</name>
@@ -59,6 +77,15 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>android.hardware.health</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IHealth</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" override="true">
         <name>android.hardware.keymaster</name>
         <transport>hwbinder</transport>
@@ -81,5 +108,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <kernel target-level="5"/>
 </manifest>
