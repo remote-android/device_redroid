@@ -1,19 +1,24 @@
-include device/generic/arm64/BoardConfig.mk
+# arm64 emulator specific definitions
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_ABI := arm64-v8a
 
-# want all fonts
-SMALLER_FONT_FOOTPRINT := false
-MINIMAL_FONT_FOOTPRINT := false
+TARGET_2ND_ARCH := arm
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_VARIANT := generic
 
-# Android 11 enabled this
-BUILD_EMULATOR_OPENGL := false
+include build/make/target/board/BoardConfigGsiCommon.mk
 
-# use seperate vendor partition
-TARGET_COPY_OUT_VENDOR := vendor
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
+
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 16777216
+BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 16777216
 
 BOARD_GPU_DRIVERS := virgl radeonsi
 
 DEVICE_MANIFEST_FILE := device/redroid/manifest.xml
-PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
-# ~ 1.3G
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1388314624
