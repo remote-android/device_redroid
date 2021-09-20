@@ -60,6 +60,7 @@ gpu_setup_host() {
     setprop qemu.gles.vendor mesa
     setprop ro.hardware.egl mesa
     setprop ro.hardware.gralloc gbm
+    setprop ro.kernel.redroid.fps 30
 }
 
 gpu_setup_guest() {
@@ -91,6 +92,9 @@ gpu_setup() {
         echo "unknown mode: $mode"
     fi
 }
+
+# ?? workaround for ueventd
+chmod 0666 /dev/dri/*
 
 gpu_setup
 
