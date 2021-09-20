@@ -56,9 +56,9 @@ PRODUCT_PACKAGES += \
     hwcomposer.redroid \
     gralloc.gbm \
     gralloc.redroid \
-    libEGL_swiftshader \
-    libGLESv1_CM_swiftshader \
-    libGLESv2_swiftshader \
+    libEGL_angle \
+    libGLESv1_CM_angle \
+    libGLESv2_angle \
     vulkan.pastel \
     libGLES_mesa \
     vulkan.radv \
