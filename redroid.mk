@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product-if-exists, product.mk)
-
 PRODUCT_SOONG_NAMESPACES += external/mesa3d
 
 # Arm64 linker failed, complain unsupported TLS DT entry
@@ -93,6 +91,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gpu_config.sh:$(TARGET_COPY_OUT_VENDOR)/bin/gpu_config.sh \
 
 
-# Extend heap size we use for dalvik/art runtime
-$(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
+$(call inherit-product, $(LOCAL_PATH)/phone-xhdpi-6144-dalvik-heap.mk)
+
+$(call inherit-product-if-exists, product.mk)
 
