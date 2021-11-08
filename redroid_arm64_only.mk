@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2011 The Android Open-Source Project
+# Copyright (C) 2012 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,17 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/redroid_x86_64.mk \
-    $(LOCAL_DIR)/redroid_x86_64_only.mk \
-    $(LOCAL_DIR)/redroid_arm64.mk \
-    $(LOCAL_DIR)/redroid_arm64_only.mk \
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-COMMON_LUNCH_CHOICES := \
-    redroid_x86_64-userdebug \
-    redroid_x86_64_only-userdebug \
-    redroid_arm64-userdebug \
-    redroid_arm64_only-userdebug \
+$(call inherit-product, $(LOCAL_PATH)/redroid.mk)
+
+# overrides
+PRODUCT_NAME := redroid_arm64_only
+PRODUCT_DEVICE := redroid_arm64_only
+PRODUCT_BRAND := ReDroid
+PRODUCT_MODEL := redroid12_arm64_only
+
+DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
