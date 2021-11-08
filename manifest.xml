@@ -44,7 +44,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" override="true">
+    <hal format="hidl">
         <name>android.hardware.keymaster</name>
         <transport>hwbinder</transport>
         <version>3.0</version>
@@ -66,5 +66,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <kernel target-level="5"/>
 </manifest>
