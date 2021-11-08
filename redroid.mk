@@ -37,8 +37,7 @@ else
 PRODUCT_BUILD_SYSTEM_IMAGE := true
 endif
 
-# update while Android S released
-PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 PRODUCT_SOONG_NAMESPACES += external/mesa3d
 
