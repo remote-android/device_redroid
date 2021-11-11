@@ -20,7 +20,7 @@ $(call inherit-product, $(LOCAL_PATH)/redroid_x86_64/device.mk)
 
 PRODUCT_NAME := redroid_x86_64
 PRODUCT_DEVICE := redroid_x86_64
-PRODUCT_BRAND := ReDroid
+PRODUCT_BRAND := redroid
 PRODUCT_MODEL := redroid9_x86_64
 
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay

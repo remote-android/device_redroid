@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+PRODUCT_MANUFACTURER := redroid
+
 PRODUCT_SOONG_NAMESPACES += external/mesa3d
 
 # Arm64 linker failed, complain unsupported TLS DT entry
