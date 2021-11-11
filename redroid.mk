@@ -12,7 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-AUDIOSERVER_MULTILIB := first
+PRODUCT_MANUFACTURER := redroid
+
+PRODUCT_SOONG_NAMESPACES += external/mesa3d
 
 # ?
 PRODUCT_PROPERTY_OVERRIDES += \
