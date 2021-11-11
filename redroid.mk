@@ -87,6 +87,7 @@ PRODUCT_COPY_FILES += \
     device/generic/goldfish/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/init.redroid.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.redroid.rc \
     $(LOCAL_PATH)/gpu_config.sh:$(TARGET_COPY_OUT_VENDOR)/bin/gpu_config.sh \
+    $(LOCAL_PATH)/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
 
 
 $(call inherit-product, $(LOCAL_PATH)/phone-xhdpi-6144-dalvik-heap.mk)
