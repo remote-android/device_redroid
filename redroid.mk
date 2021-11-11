@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+PRODUCT_MANUFACTURER := redroid
+
 #$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 #PRODUCT_COMPRESSED_APEX := false
 
