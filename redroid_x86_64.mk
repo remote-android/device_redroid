@@ -25,3 +25,6 @@ PRODUCT_MODEL := redroid12_x86_64
 
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.redroid32.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.redroid32.rc \
+

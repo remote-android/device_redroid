@@ -3,9 +3,6 @@ on early-init
 
     mount sysfs sysfs /sys rw remount  # ueventd fix
 
-    # 32bit app require this, remove for 64bit only redroid
-    write /proc/sys/kernel/pid_max 65535
-
     # inputflinger require this dir
     mkdir /dev/input
 

@@ -1,0 +1,3 @@
+on early-init
+    write /proc/sys/kernel/pid_max 65535
+
