@@ -18,7 +18,7 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 BOARD_GPU_DRIVERS := virgl radeonsi
 
-DEVICE_MANIFEST_FILE := device/redroid/manifest.xml
+DEVICE_MANIFEST_FILE += device/redroid/manifest.xml
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
 # ~ 1.3G
