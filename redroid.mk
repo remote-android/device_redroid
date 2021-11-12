@@ -103,6 +103,8 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.keymaster@3.0-service \
     android.hardware.keymaster@3.0-impl \
+    power.default \
+    android.hardware.power-service.example \
 
 
 ifneq ($(REDROID_DISABLE_OMX),true)
