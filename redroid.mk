@@ -17,6 +17,8 @@ PRODUCT_MANUFACTURER := redroid
 #$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 #PRODUCT_COMPRESSED_APEX := false
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # no kernel involved
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
