@@ -90,9 +90,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.3-service.clearkey \
+    android.hardware.drm@1.3-service-lazy.clearkey \
     android.hardware.gatekeeper@1.0-service.software \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.allocator@2.0-impl \
@@ -103,6 +101,9 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.keymaster@3.0-service \
     android.hardware.keymaster@3.0-impl \
+    power.default \
+    android.hardware.power-service.example \
+    android.hardware.power.stats@1.0-service.mock \
 
 
 PRODUCT_SOONG_NAMESPACES += frameworks/av/services/audiopolicy/config
