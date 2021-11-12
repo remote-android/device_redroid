@@ -26,6 +26,8 @@ on init
     # fix suspend host system?
     mount none /dev/null /sys/power/state bind
 
+    setprop debug.renderengine.backend gles
+
 
 on post-fs-data
     # fix for static IP, must after post-fs-data and before netd
