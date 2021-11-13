@@ -92,9 +92,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@4.0-impl \
     android.hardware.audio.effect@4.0-impl \
     android.hardware.configstore@1.1-service \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.2-service.clearkey \
+    android.hardware.drm@1.2-service-lazy.clearkey \
     android.hardware.gatekeeper@1.0-service \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.graphics.allocator@2.0-service \
@@ -105,6 +103,9 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.0-service.goldfish \
     android.hardware.keymaster@3.0-service \
     android.hardware.keymaster@3.0-impl \
+
+
+DEVICE_MANIFEST_FILE += device/redroid/android.hardware.drm@1.2-service.clearkey.xml
 
 USE_XML_AUDIO_POLICY_CONF := 1
 
