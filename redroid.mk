@@ -23,10 +23,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.nobootanimation=1
 
-# required by sync.sh script
-PRODUCT_PACKAGES += \
-    fs_config
-
 PRODUCT_PACKAGES += \
     audio.r_submix.default \
     hwcomposer.redroid \
