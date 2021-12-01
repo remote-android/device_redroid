@@ -65,7 +65,7 @@ gpu_setup_host() {
 gpu_setup_guest() {
     echo "use GPU guest mode"
 
-    setprop ro.hardware.egl angle
+    setprop ro.hardware.egl swiftshader
     setprop ro.hardware.gralloc redroid
     setprop ro.hardware.vulkan pastel
 }
