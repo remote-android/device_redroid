@@ -1,3 +1,4 @@
 # fix for mesa / gallium3D dri
 uname: 1
 sysinfo: 1
+kcmp: 1
