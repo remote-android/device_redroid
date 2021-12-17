@@ -3,6 +3,11 @@ on early-init
 
     mount sysfs sysfs /sys rw remount  # ueventd fix
 
+    chmod 666 /dev/ashmem
+    chmod 666 /dev/ptmx
+    chmod 666 /dev/pts/ptmx
+
+    exec -- /bin/rm -rf /dev/input
     # inputflinger require this dir
     mkdir /dev/input
 

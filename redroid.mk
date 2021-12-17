@@ -66,8 +66,13 @@ PRODUCT_PACKAGES += \
     libGLESv1_CM_angle \
     libGLESv2_angle \
     vulkan.pastel \
-    libGLES_mesa \
-    vulkan.radv \
+    libEGL_mesa \
+    libGLESv1_CM_mesa \
+    libGLESv2_mesa \
+    libgallium_dri \
+    libglapi \
+    vulkan.radeon \
+    vulkan.virtio \
     ipconfigstore \
 
 PRODUCT_PROPERTY_OVERRIDES += \
