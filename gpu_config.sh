@@ -8,10 +8,10 @@ setup_vulkan() {
             setprop ro.hardware.vulkan intel
             ;;
         amdgpu)
-            setprop ro.hardware.vulkan radv
+            setprop ro.hardware.vulkan radeon
             ;;
         virtio_gpu)
-            # google venus
+            setprop ro.hardware.vulkan virtio
             ;;
         *)
             echo "not supported driver: $1"
@@ -25,6 +25,7 @@ setup_render_node() {
         echo "force render node: $node"
 
         setprop gralloc.gbm.device $node
+        chmod 666 $node
 
         # setup vulkan
         cd /sys/kernel/debug/dri
@@ -44,6 +45,7 @@ setup_render_node() {
                     node="/dev/dri/renderD$d"
                     echo "use render node: $node"
                     setprop gralloc.gbm.device $node
+                    chmod 666 $node
                     return 0
                     ;;
             esac
