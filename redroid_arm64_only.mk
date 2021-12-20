@@ -17,6 +17,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 REDROID_DISABLE_OMX := true
 $(call inherit-product, $(LOCAL_PATH)/redroid.mk)
+$(call inherit-product, $(LOCAL_PATH)/redroid_arm64_only/device.mk)
 
 # overrides
 PRODUCT_NAME := redroid_arm64_only

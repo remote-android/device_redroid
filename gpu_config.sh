@@ -13,6 +13,15 @@ setup_vulkan() {
         virtio_gpu)
             setprop ro.hardware.vulkan virtio
             ;;
+        v3d|vc4)
+            setprop ro.hardware.vulkan broadcom
+            ;;
+        msm)
+            setprop ro.hardware.vulkan freedreno
+            ;;
+        panfrost)
+            setprop ro.hardware.vulkan panfrost
+            ;;
         *)
             echo "not supported driver: $1"
             ;;
@@ -41,7 +50,7 @@ setup_render_node() {
             echo "DRI node exists, driver: $driver"
             setup_vulkan $driver
             case $driver in
-                i915|amdgpu|virtio_gpu)
+                i915|amdgpu|virtio_gpu|v3d|vc4|msm|panfrost)
                     node="/dev/dri/renderD$d"
                     echo "use render node: $node"
                     setprop gralloc.gbm.device $node

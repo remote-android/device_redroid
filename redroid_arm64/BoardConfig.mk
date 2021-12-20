@@ -19,8 +19,8 @@ BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 16777216
 BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 16777216
 
 BOARD_MESA3D_USES_MESON_BUILD := true
-BOARD_MESA3D_GALLIUM_DRIVERS := virgl radeonsi
-BOARD_MESA3D_VULKAN_DRIVERS := virtio-experimental amd
+BOARD_MESA3D_GALLIUM_DRIVERS := virgl radeonsi v3d vc4 freedreno panfrost
+BOARD_MESA3D_VULKAN_DRIVERS := virtio-experimental amd broadcom freedreno panfrost
 
 DEVICE_MANIFEST_FILE += device/redroid/manifest.xml
 
