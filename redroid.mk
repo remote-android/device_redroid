@@ -74,6 +74,7 @@ PRODUCT_PACKAGES += \
     vulkan.radeon \
     vulkan.virtio \
     ipconfigstore \
+    vncserver \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.qemu=1 \
