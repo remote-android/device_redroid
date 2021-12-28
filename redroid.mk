@@ -43,8 +43,6 @@ endif
 
 PRODUCT_SHIPPING_API_LEVEL := 31
 
-PRODUCT_SOONG_NAMESPACES += external/mesa3d
-
 AUDIOSERVER_MULTILIB := first
 
 # ?
