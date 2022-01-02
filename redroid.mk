@@ -79,6 +79,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320 \
     persist.sys.fuse=1 \
 
+# disable ueventd coldboot for performance
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.cold_boot_done=true \
+
 # Phone App required
 PRODUCT_PACKAGES += \
     rild
