@@ -2,7 +2,6 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug mode=755
 
     mount none /system/etc /etc bind rec  # docker fix
-    mount sysfs sysfs /sys rw remount  # ueventd fix
 
     symlink /system/bin /bin
 
