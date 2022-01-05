@@ -79,7 +79,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # disable ueventd coldboot for performance
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.cold_boot_done=true \
+    ro.cold_boot_done=true \
 
 # Phone App required
 PRODUCT_PACKAGES += \
