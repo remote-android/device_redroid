@@ -16,6 +16,11 @@ on early-init
     # 32bit app require this, remove for 64bit only redroid
     write /proc/sys/kernel/pid_max 65535
 
+    chmod 666 /dev/ashmem
+    chmod 666 /dev/ptmx
+    chmod 666 /dev/pts/ptmx
+
+    exec -- /bin/rm -rf /dev/input
     # inputflinger require this dir
     mkdir /dev/input
 
