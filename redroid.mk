@@ -52,10 +52,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.nobootanimation=1
 
-# required by sync.sh script
-PRODUCT_HOST_PACKAGES += \
-    fs_config
-
 PRODUCT_PACKAGES += \
     hwcomposer.redroid \
     gralloc.gbm \
