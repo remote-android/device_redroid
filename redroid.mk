@@ -24,6 +24,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.nobootanimation=1
 
 PRODUCT_PACKAGES += \
+    binder_alloc \
     audio.r_submix.default \
     hwcomposer.redroid \
     gralloc.gbm \
