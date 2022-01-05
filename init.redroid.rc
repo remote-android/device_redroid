@@ -1,8 +1,6 @@
 on early-init
     mount debugfs debugfs /sys/kernel/debug mode=755
 
-    mount sysfs sysfs /sys rw remount  # ueventd fix
-
     # 32bit app require this, remove for 64bit only redroid
     write /proc/sys/kernel/pid_max 65535
 
