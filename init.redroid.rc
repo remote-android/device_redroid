@@ -1,8 +1,6 @@
 on early-init
     mount debugfs debugfs /sys/kernel/debug mode=755
 
-    mount sysfs sysfs /sys rw remount  # ueventd fix
-
     # Mount binderfs
     mkdir /dev/binderfs
     mount binder binder /dev/binderfs stats=global
