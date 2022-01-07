@@ -29,7 +29,7 @@ PRODUCT_PACKAGES += \
     hwcomposer.redroid \
     gralloc.gbm \
     gralloc.redroid \
-    gatekeeper.ranchu \
+    gatekeeper.redroid \
     libEGL_swiftshader \
     libGLESv1_CM_swiftshader \
     libGLESv2_swiftshader \
@@ -40,7 +40,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.qemu=1 \
     ro.hardware=redroid \
-    ro.hardware.gatekeeper=ranchu \
     ro.sf.lcd_density=320 \
 
 # Phone App required
