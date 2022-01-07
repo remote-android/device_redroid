@@ -25,6 +25,7 @@ setup_render_node() {
         echo "force render node: $node"
 
         setprop gralloc.gbm.device $node
+        chmod 0666 $node
 
         # setup vulkan
         cd /sys/kernel/debug/dri
@@ -44,6 +45,7 @@ setup_render_node() {
                     node="/dev/dri/renderD$d"
                     echo "use render node: $node"
                     setprop gralloc.gbm.device $node
+                    chmod 0666 $node
                     return 0
                     ;;
             esac
