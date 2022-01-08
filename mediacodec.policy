@@ -2,3 +2,4 @@
 uname: 1
 sysinfo: 1
 kcmp: 1
+sched_setscheduler: 1
