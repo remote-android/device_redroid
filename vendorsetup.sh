@@ -3,3 +3,5 @@
 
 add_lunch_combo redroid_x86_64-userdebug
 add_lunch_combo redroid_arm64-userdebug
+
+export PATH=$(pwd)/prebuilts/jdk/jdk8/linux-x86/bin:$PATH
