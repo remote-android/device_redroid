@@ -1,0 +1,6 @@
+# fix for mesa / gallium3D dri
+uname: 1
+sysinfo: 1
+kcmp: 1
+sched_getaffinity: 1
+sched_setscheduler: 1
