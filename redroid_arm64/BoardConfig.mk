@@ -1,15 +1,4 @@
-include device/generic/arm64/BoardConfig.mk
-
-TARGET_USES_HWC2 := true
-
-# want all fonts
-SMALLER_FONT_FOOTPRINT := false
-MINIMAL_FONT_FOOTPRINT := false
-
-# use seperate vendor partition
-TARGET_COPY_OUT_VENDOR := vendor
-
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+include build/make/target/board/generic_arm64_ab/BoardConfig.mk
 
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
@@ -17,7 +6,4 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 536870912
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 DEVICE_MANIFEST_FILE += device/redroid/manifest.xml
-PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
-# ~ 1.3G
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1388314624

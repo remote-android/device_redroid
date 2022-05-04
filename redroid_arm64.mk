@@ -13,7 +13,7 @@
 # limitations under the License.
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/treble_common_64.mk)
 
 $(call inherit-product, $(LOCAL_PATH)/redroid.mk)
 $(call inherit-product, $(LOCAL_PATH)/redroid_arm64/device.mk)
