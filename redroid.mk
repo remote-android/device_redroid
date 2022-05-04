@@ -59,13 +59,6 @@ PRODUCT_PACKAGES += \
     libGLESv1_CM_swiftshader \
     libGLESv2_swiftshader \
     vulkan.pastel \
-    libEGL_mesa \
-    libGLESv1_CM_mesa \
-    libGLESv2_mesa \
-    libgallium_dri \
-    libglapi \
-    vulkan.radeon \
-    vulkan.virtio \
     ipconfigstore \
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -141,3 +134,4 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, product.mk)
 
+$(call inherit-product, device/redroid-prebuilts/prebuilts.mk)
