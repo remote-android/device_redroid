@@ -61,13 +61,6 @@ PRODUCT_PACKAGES += \
     libGLESv1_CM_angle \
     libGLESv2_angle \
     vulkan.pastel \
-    libEGL_mesa \
-    libGLESv1_CM_mesa \
-    libGLESv2_mesa \
-    libgallium_dri \
-    libglapi \
-    vulkan.radeon \
-    vulkan.virtio \
     ipconfigstore \
     vncserver \
 
@@ -155,3 +148,4 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, product.mk)
 
+$(call inherit-product, device/redroid-prebuilts/prebuilts.mk)
