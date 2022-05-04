@@ -2,4 +2,4 @@
 uname: 1
 sysinfo: 1
 kcmp: 1
-mkdirat: 1
+sched_getaffinity: 1
