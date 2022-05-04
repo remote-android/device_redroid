@@ -16,7 +16,7 @@ setup_vulkan() {
         v3d|vc4)
             setprop ro.hardware.vulkan broadcom
             ;;
-        msm)
+        msm_drm)
             setprop ro.hardware.vulkan freedreno
             ;;
         panfrost)
@@ -50,7 +50,7 @@ setup_render_node() {
             echo "DRI node exists, driver: $driver"
             setup_vulkan $driver
             case $driver in
-                i915|amdgpu|virtio_gpu|v3d|vc4|msm|panfrost)
+                i915|amdgpu|virtio_gpu|v3d|vc4|msm_drm|panfrost)
                     node="/dev/dri/renderD$d"
                     echo "use render node: $node"
                     setprop gralloc.gbm.device $node
