@@ -14,8 +14,6 @@
 
 PRODUCT_MANUFACTURER := redroid
 
-PRODUCT_SOONG_NAMESPACES += external/mesa3d
-
 # ?
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.radio.noril=yes
@@ -33,7 +31,6 @@ PRODUCT_PACKAGES += \
     libEGL_swiftshader \
     libGLESv1_CM_swiftshader \
     libGLESv2_swiftshader \
-    libGLES_mesa \
     vulkan.pastel \
     ipconfigstore \
 
@@ -95,3 +92,4 @@ $(call inherit-product, $(LOCAL_PATH)/phone-xhdpi-6144-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, product.mk)
 
+$(call inherit-product, device/redroid-prebuilts/prebuilts.mk)
