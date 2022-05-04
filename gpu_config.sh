@@ -8,10 +8,19 @@ setup_vulkan() {
             setprop ro.hardware.vulkan intel
             ;;
         amdgpu)
-            setprop ro.hardware.vulkan radv
+            setprop ro.hardware.vulkan radeon
             ;;
         virtio_gpu)
-            # google venus
+            setprop ro.hardware.vulkan virtio
+            ;;
+        v3d|vc4)
+            setprop ro.hardware.vulkan broadcom
+            ;;
+        msm_drm)
+            setprop ro.hardware.vulkan freedreno
+            ;;
+        panfrost)
+            setprop ro.hardware.vulkan panfrost
             ;;
         *)
             echo "not supported driver: $1"
@@ -25,7 +34,7 @@ setup_render_node() {
         echo "force render node: $node"
 
         setprop gralloc.gbm.device $node
-        chmod 0666 $node
+        chmod 666 $node
 
         # setup vulkan
         cd /sys/kernel/debug/dri
@@ -41,11 +50,11 @@ setup_render_node() {
             echo "DRI node exists, driver: $driver"
             setup_vulkan $driver
             case $driver in
-                i915|amdgpu|virtio_gpu)
+                i915|amdgpu|virtio_gpu|v3d|vc4|msm_drm|panfrost)
                     node="/dev/dri/renderD$d"
                     echo "use render node: $node"
                     setprop gralloc.gbm.device $node
-                    chmod 0666 $node
+                    chmod 666 $node
                     return 0
                     ;;
             esac
@@ -93,6 +102,9 @@ gpu_setup() {
         echo "unknown mode: $mode"
     fi
 }
+
+# ?? workaround for ueventd
+chmod 0666 /dev/dri/*
 
 gpu_setup
 

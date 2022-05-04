@@ -39,8 +39,6 @@ endif
 
 PRODUCT_SHIPPING_API_LEVEL := 29
 
-PRODUCT_SOONG_NAMESPACES += external/mesa3d
-
 AUDIOSERVER_MULTILIB := first
 
 # ?
@@ -60,8 +58,6 @@ PRODUCT_PACKAGES += \
     libGLESv1_CM_swiftshader \
     libGLESv2_swiftshader \
     vulkan.pastel \
-    libGLES_mesa \
-    vulkan.radv \
     ipconfigstore \
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -128,3 +124,4 @@ $(call inherit-product, device/redroid/phone-xhdpi-6144-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, product.mk)
 
+$(call inherit-product, device/redroid-prebuilts/prebuilts.mk)
