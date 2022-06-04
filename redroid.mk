@@ -27,20 +27,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.nobootanimation=1
 
 PRODUCT_PACKAGES += \
-    binder_alloc \
-    hwcomposer.redroid \
-    gralloc.redroid \
-    gralloc.gbm \
     gatekeeper.redroid \
     libEGL_swiftshader \
     libGLESv1_CM_swiftshader \
     libGLESv2_swiftshader \
     vulkan.pastel \
-    ipconfigstore \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware=redroid \
-    ro.sf.lcd_density=320 \
 
 # Phone App required
 PRODUCT_PACKAGES += \
@@ -94,11 +88,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
     $(LOCAL_PATH)/redroid-removed-permissions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/redroid-removed-permissions.xml \
     $(LOCAL_PATH)/init.redroid.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.redroid.rc \
-    $(LOCAL_PATH)/gpu_config.sh:$(TARGET_COPY_OUT_VENDOR)/bin/gpu_config.sh \
 
 
 $(call inherit-product, device/redroid/phone-xhdpi-6144-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, product.mk)
+
+$(call inherit-product, vendor/redroid/vendor.mk)
 
 $(call inherit-product, device/redroid-prebuilts/prebuilts.mk)

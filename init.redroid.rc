@@ -1,7 +1,6 @@
 on early-init
-    mount debugfs debugfs /sys/kernel/debug mode=755
-
-    mount none /system/etc /etc bind rec  # docker fix
+    # docker fix
+    mount none /system/etc /etc bind rec
 
     # Mount binderfs
     mkdir /dev/binderfs
@@ -15,40 +14,3 @@ on early-init
 
     # 32bit app require this, remove for 64bit only redroid
     write /proc/sys/kernel/pid_max 65535
-
-    chmod 666 /dev/ashmem
-    chmod 666 /dev/ptmx
-    chmod 666 /dev/pts/ptmx
-
-    exec -- /bin/rm -rf /dev/input
-    # inputflinger require this dir
-    mkdir /dev/input
-
-    exec - root root -- /vendor/bin/gpu_config.sh
-
-
-# setup overlay data partition
-on early-init && property:ro.kernel.redroid.overlay=1
-    mkdir /data-diff/upper
-    rmdir /data-diff/work
-    mkdir /data-diff/work
-
-    mount overlay overlay /data lowerdir=/data-base,upperdir=/data-diff/upper,workdir=/data-diff/work
-
-
-on init
-    # lxcfs better
-    write /data/.empty 0
-    mount none /data/.empty /proc/vmallocinfo bind
-
-    # fix suspend host system?
-    mount none /dev/null /sys/power/state bind
-
-
-on post-fs-data
-    # fix for static IP, must after post-fs-data and before netd
-    exec - system system -- /vendor/bin/ipconfigstore
-
-    # no need to mount, and encryption not supported yet
-    trigger nonencrypted
-
