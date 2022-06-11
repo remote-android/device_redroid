@@ -105,6 +105,13 @@ PRODUCT_PACKAGES += \
     android.hardware.power.stats@1.0-service.mock \
 
 
+ifneq ($(REDROID_DISABLE_OMX),true)
+    $(call inherit-product, hardware/redroid/omx/omx.mk)
+else
+    $(call inherit-product, hardware/redroid/c2/c2.mk)
+endif
+
+
 #DEVICE_MANIFEST_FILE += device/redroid/android.hardware.bluetooth@1.1.xml
 #
 #PRODUCT_PACKAGES += \
@@ -129,11 +136,6 @@ PRODUCT_PACKAGES += \
 
 
 PRODUCT_COPY_FILES += \
-    device/generic/goldfish/camera/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
-    device/generic/goldfish/camera/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.ethernet.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
