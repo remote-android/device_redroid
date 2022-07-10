@@ -93,11 +93,9 @@ else
 endif
 
 
-#DEVICE_MANIFEST_FILE += device/redroid/android.hardware.bluetooth@1.1.xml
-#
-#PRODUCT_PACKAGES += \
-#   android.hardware.bluetooth@1.1-service \
-#   libbt-vendor \
+DEVICE_MANIFEST_FILE += device/redroid/android.hardware.bluetooth@1.1.xml
+
+PRODUCT_PACKAGES += android.hardware.bluetooth@1.1-service.sim
 
 
 PRODUCT_PACKAGES += \
