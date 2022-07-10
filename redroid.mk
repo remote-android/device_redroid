@@ -67,6 +67,12 @@ PRODUCT_PACKAGES += \
 
 $(call inherit-product, hardware/redroid/omx/omx.mk)
 
+
+DEVICE_MANIFEST_FILE += device/redroid/android.hardware.bluetooth@1.0.xml
+
+PRODUCT_PACKAGES += android.hardware.bluetooth@1.0-service.sim
+
+
 USE_XML_AUDIO_POLICY_CONF := 1
 
 PRODUCT_COPY_FILES += \
