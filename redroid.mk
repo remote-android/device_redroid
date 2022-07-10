@@ -100,6 +100,11 @@ else
 endif
 
 
+DEVICE_MANIFEST_FILE += device/redroid/android.hardware.bluetooth@1.0.xml
+
+PRODUCT_PACKAGES += android.hardware.bluetooth@1.0-service.sim
+
+
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.0-service \
     android.hardware.sensors@2.0-service.mock \
