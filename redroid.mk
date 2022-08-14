@@ -41,7 +41,7 @@ else
 PRODUCT_BUILD_SYSTEM_IMAGE := true
 endif
 
-PRODUCT_SHIPPING_API_LEVEL := 31
+PRODUCT_SHIPPING_API_LEVEL := 33
 
 AUDIOSERVER_MULTILIB := first
 
@@ -89,9 +89,9 @@ PRODUCT_PACKAGES += \
 
 ifneq ($(REDROID_DISABLE_OMX),true)
 $(call inherit-product, hardware/redroid/omx/omx.mk)
-else
-$(call inherit-product, hardware/redroid/c2/c2.mk)
 endif
+
+$(call inherit-product, hardware/redroid/c2/c2.mk)
 
 
 DEVICE_MANIFEST_FILE += device/redroid/android.hardware.bluetooth@1.1.xml
