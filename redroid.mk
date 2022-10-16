@@ -56,7 +56,6 @@ PRODUCT_PACKAGES += \
     vulkan.pastel \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.kernel.qemu=1 \
     ro.hardware=redroid \
 
 # Phone App required
