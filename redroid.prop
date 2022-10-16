@@ -1,4 +1,3 @@
-ro.kernel.qemu=1
 ro.hardware=redroid
 
 # disable ueventd cold-boot for performance
