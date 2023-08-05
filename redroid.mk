@@ -79,12 +79,10 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl \
-    android.hardware.keymaster@3.0-service \
-    android.hardware.keymaster@3.0-impl \
-    power.default \
+    android.hardware.health-service.example \
+    android.hardware.keymaster@4.1-service \
     android.hardware.power-service.example \
+    android.hardware.thermal@2.0-service.mock \
 
 
 ifneq ($(REDROID_DISABLE_OMX),true)

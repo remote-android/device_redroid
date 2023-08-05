@@ -1,4 +1,4 @@
-<manifest version="1.0" type="device" target-level="6">
+<manifest version="1.0" type="device" target-level="7">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -41,15 +41,6 @@
         <version>2.1</version>
         <interface>
             <name>IComposer</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.keymaster</name>
-        <transport>hwbinder</transport>
-        <version>3.0</version>
-        <interface>
-            <name>IKeymasterDevice</name>
             <instance>default</instance>
         </interface>
     </hal>
