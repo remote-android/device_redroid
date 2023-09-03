@@ -24,7 +24,7 @@ $(call inherit-product, $(LOCAL_PATH)/redroid_arm64_only/device.mk)
 PRODUCT_NAME := redroid_arm64_only
 PRODUCT_DEVICE := redroid_arm64_only
 PRODUCT_BRAND := redroid
-PRODUCT_MODEL := redroid13_arm64_only
+PRODUCT_MODEL := redroid14_arm64_only
 
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
