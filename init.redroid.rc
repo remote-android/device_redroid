@@ -1,3 +1,0 @@
-on early-init
-    # 32bit app require this, remove for 64bit only redroid
-    write /proc/sys/kernel/pid_max 65535
