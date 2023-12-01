@@ -92,6 +92,11 @@ endif
 $(call inherit-product, hardware/redroid/c2/c2.mk)
 
 
+DEVICE_MANIFEST_FILE += device/redroid/android.hardware.bluetooth@1.1.xml
+
+PRODUCT_PACKAGES += android.hardware.bluetooth@1.1-service.sim
+
+
 PRODUCT_SOONG_NAMESPACES += frameworks/av/services/audiopolicy/config
 # audio policy
 PRODUCT_PACKAGES += \
