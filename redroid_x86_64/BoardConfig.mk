@@ -7,3 +7,5 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 DEVICE_MANIFEST_FILE += device/redroid/manifest.xml
 
+# Increase the system image partition size to 2 GB
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648
