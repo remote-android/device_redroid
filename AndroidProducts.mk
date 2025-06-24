@@ -21,8 +21,8 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/redroid_arm64_only.mk \
 
 COMMON_LUNCH_CHOICES := \
-    redroid_x86_64-userdebug \
-    redroid_x86_64_only-userdebug \
-    redroid_arm64-userdebug \
-    redroid_arm64_only-userdebug \
+    redroid_x86_64-trunk_staging-userdebug \
+    redroid_x86_64_only-trunk_staging-userdebug \
+    redroid_arm64-trunk_staging-userdebug \
+    redroid_arm64_only-trunk_staging-userdebug \
 
