@@ -45,6 +45,13 @@ endif
 
 PRODUCT_SHIPPING_API_LEVEL := 34
 
+# Android >= 17 has no ashmem, so force memfd instead. The property alone
+# was not enough on Android 16 (an extra ashmem ioctl check ran against
+# memfd), but Android 17 dropped that check. It must go in SYSTEM:
+# use_memfd_prop is system_restricted_prop and vendor_init cannot set it.
+PRODUCT_SYSTEM_PROPERTIES += \
+    sys.use_memfd=true \
+
 AUDIOSERVER_MULTILIB := first
 
 TARGET_VENDOR_PROP += device/redroid/redroid.prop
