@@ -62,6 +62,14 @@ PRODUCT_PACKAGES += \
     libGLESv2_angle \
     vulkan.pastel \
 
+# gralloc 5 (IMapper 5 stable-C) through minigbm. Coexists with the
+# existing gralloc 2: GraphicBufferMapper probes 5 -> 4 -> 3 -> 2.
+# The host must load the vkms kernel module, otherwise minigbm finds no
+# DRM device it recognises and the allocator never starts.
+PRODUCT_PACKAGES += \
+    mapper.minigbm \
+    android.hardware.graphics.allocator-service.minigbm \
+
 
 # Phone App required
 PRODUCT_PACKAGES += \
