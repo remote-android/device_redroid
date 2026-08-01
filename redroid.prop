@@ -1,7 +1,10 @@
 ro.hardware=redroid
 
-# disable ueventd cold-boot for performance
-ro.cold_boot_done=true
+# Do not disable ueventd cold boot. Without the cold-boot scan there is no
+# /dev/block/loopN (apexd activates 0 APEX, so /system/bin/linker64 is a
+# dangling symlink) and no /dev/graphics/fb0 (the composer cannot open the
+# framebuffer and init takes surfaceflinger and zygote down with it).
+# ro.cold_boot_done=true
 
 persist.sys.fuse=1
 
